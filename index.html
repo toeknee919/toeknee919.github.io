@@ -9,19 +9,26 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src=".js"></script>
-	<link rel="stylesheet" type="text/css" href=".css">
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/lightbox.min.js"></script>
+	<link href="css/lightbox.css" rel="stylesheet" />
 
 	<title>Blue Barn Wagyu</title>
 
 
 	<style>
+	html { 
+		background: url(images/head_image.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
 	body{
 			margin: 15px auto;
 			max-width: 1000px;
-			background-color: #ccc;
+			background-color: transparent;
 		}
-				
 	#bbw-head{
 			margin: 0px auto;
 			max-width: 1000px;
@@ -42,17 +49,24 @@
 			display: block;
 			float:right;
 		}
+	#about-us{
+			margin: 0px;
+			width: 100%;
+			padding: 10px;
+		  background-color: rgba(255, 255, 255, 0.85);	
+		}
 	#side-bar{
 			float: right;
 			width: 20%;
 			height: 100%;
-			background-color: white;	
+			margin: 0px;
+			background-color: rgba(255, 255, 255, 0.9);	
 			clear: right;
 		}
 	button[type=button]{
 			width:100%;
 		}
-	.media{
+	.media, #a{
 			clear:left;
 			width:80%;
 			margin-top:12px;
@@ -60,82 +74,74 @@
 	.media-object{
 			width: 100px;
 		}
-	#about-us{
-			width: 80%;
-		}
+
 	</style>
 
-	<script type="text/javascript">
-	
-		
-	</script>
 
 </head>
 
 <body>
+
 		<!--header-->
 		<div id="bbw-head">
 			<img src="images/head_image.jpg" alt="Blue Barn Wagyu" id="head-image" >
 			<img src="images/bluebarnwagyu.jpg" alt="Blue Barn Wagyu" id="blue_barn_logo" >
 
 		</div>
-		
-		<!--sidebar-->
-		<div id="side-bar">
-			<button type="button" id="contact-us" onclick="window.alert('I could have really messed with you when you pressed that button dad')">Contact us</button><br>
-			<button type="button" id="wagyu-wiki" onclick="location.href ='http://en.wikipedia.org/wiki/Wagyu'">Wagyu-Wikipedia</button><br>		
-		</div>
-		
-		
 		<div id="about-us">
-		<h2>About Us</h2>
-		Blue Barn Wagyu is a small local Waygu Ranch which raises and sells Wagyu cattle. Waygu, also known as the
-		"American Style Kobe Beef" is a high quality beef sold in most high end restaurants. We raise both full blood
-		Waygu and some mixed with high percentages of Wagyu usually in the 80-90 percent range. Please contact us if
-		you are seriously interested in purchasing one of our cattle. 
-		<div><br><br>
-		
-		
-		
-		
-		
-		<!--images and info-->
-		<div class="media">
-		
-			<div class="media-left media-middle">
-				<a href="#">
-				<img class="media-object" src="images/grass-cows.jpg" alt="Wagyu">
-				</a>
+				<!--sidebar-->
+			<div id="side-bar">
+				<button type="button" id="contact-us" onclick="window.alert('I could have really messed with you when you pressed that button dad')">Contact us</button><br>
+				<button type="button" id="wagyu-wiki" onclick="location.href ='http://en.wikipedia.org/wiki/Wagyu'">Wagyu-Wikipedia</button><br>		
 			</div>
-			<div class="media-body">
-				<h4 class="media-heading">Healthy and Grass Fed</h4>
-				Our Wagyu are grass fed and raised on a healthy farm here in Brownsville Oregon located between Albany and Eugene 
-				East of Interstate 5.
+			<div id="a">
+			<h2>About Us</h2>
+			Blue Barn Wagyu is a small local Waygu Ranch which raises and sells Wagyu cattle. Waygu, also known as the
+			"American Style Kobe Beef" is a high quality beef sold in most high end restaurants. We raise both full blood
+			Waygu and some mixed with high percentages of Wagyu usually in the 80-90 percent range. Please contact us if
+			you are seriously interested in purchasing one of our cattle. 
+			<br><br>
 			</div>
-			<br>
-			
-			<div class="media-left media-middle">
-				<a href="#">
-				<img class="media-object" src="images/grass-cows-2.jpg" alt="Wagyu">
-				</a>
-			</div>
-			<div class="media-body">
-				<h4 class="media-heading">Lots of Space to Roam</h4>
-				Our small herd of Wagyu have 10 acres to roam with fresh green grass to eat almost year round. 
-			</div>
-			<br>
-			
-			<div class="media-left media-middle">
-				<a href="#">
-				<img class="media-object" src="images/grass-cows-2.jpg" alt="Wagyu">
-				</a>
-			</div>
-			<div class="media-body">
-				<h4 class="media-heading">Clean Cows Taste Better</h4>
-				Our property is well drained which keeps our cows out of the mud and provides healthy fresh grass for them to eat. 
-			</div>
-			
-		</div><!--end images-->
+				<!--images and info-->
+				<div class="media">
+				
+					<div class="media-left media-middle">
+						<a href="images/grass-cows.jpg" data-lightbox="image-1">
+						<img class="media-object" src="images/grass-cows.jpg"   alt="Wagyu">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Healthy and Grass Fed</h4>
+						Our Wagyu are grass fed and raised on a healthy farm here in Brownsville Oregon located between Albany and Eugene 
+						East of Interstate 5.
+					</div>
+					<br>
+					
+					<div class="media-left media-middle">
+						<a href="images/grass-cows-2.jpg" data-lightbox="image-1">
+						<img class="media-object" src="images/grass-cows-2.jpg"  alt="Wagyu">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Lots of Space to Roam</h4>
+						Our small herd of Wagyu have 10 acres to roam with fresh green grass to eat almost year round. 
+					</div>
+					<br>
+					
+					<div class="media-left media-middle">
+						<a href="images/grass-cows.jpg" data-lightbox="image-1">
+						<img class="media-object" src="images/grass-cows.jpg" alt="Wagyu">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Clean Cows Taste Better</h4>
+						Our property is well drained which keeps our cows out of the mud and provides healthy fresh grass for them to eat. 
+					</div>
+					
+				</div><!--end images-->
+		</div>
+
+	
 		
 </body>
 
