@@ -15,57 +15,89 @@
 
 	<title>Blue Barn Wagyu</title>
 
-
+<!--background LW works for 1000px wide and above-->
 	<style>
 	html { 
-		background: url(images/head_image.jpg) no-repeat center center fixed; 
+		background: url(images/head_image_grey_lw.jpg) no-repeat center center fixed; 
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
 	}
 	body{
-			margin: 15px auto;
-			max-width: 1000px;
+			margin: 0px auto;
 			background-color: transparent;
 		}
+	#head-wrapper{
+	  display:table;
+    width:100%;
+	}
 	#bbw-head{
 			margin: 0px auto;
-			max-width: 1000px;
-			background-color: #aaa;
-			display: block;
+			width: 100%;
+			display: flex;
+			text-align: center;
+			background-color: black;
+			opacity: 0.85;
+			font-size: 0px;
+			display: table-row;
 		}
-
+	#logo{
+			margin: 10px auto;
+			text-align: center;
+		}
 	#blue_barn_logo{
 			height:auto;
-			width: 30%;
+			width: 20%;
 			max-width: 300px;
-			display: block;
-		}
-	#head-image{
-			height:auto;
-			width: 70%;
-			max-width: 700px;
-			display: block;
-			float:right;
 		}
 	#about-us{
-			margin: 0px;
-			width: 100%;
+			margin: 0px auto;
+			width: 80%;
 			padding: 10px;
-		  background-color: rgba(255, 255, 255, 0.85);	
+		  background-color: rgba(255, 255, 255, 0.4);	
 		}
-	#side-bar{
-			float: right;
-			width: 20%;
-			height: 100%;
-			margin: 0px;
-			background-color: rgba(255, 255, 255, 0.9);	
-			clear: right;
-		}
-	button[type=button]{
-			width:100%;
-		}
+	a{
+		vertical-align: middle;
+	}
+	.button{
+				width: 12.5%;
+				-moz-box-shadow:inset 0px 1px 18px 5px #91b8b3;
+				-webkit-box-shadow:inset 0px 1px 18px 5px #91b8b3;
+				box-shadow:inset 0px 1px 18px 5px #000;
+				background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7B80A1 ), color-stop(1, #7B80A1 ));
+				background:-moz-linear-gradient(top, #7B80A1  5%, #7B80A1  100%);
+				background:-webkit-linear-gradient(top, #7B80A1  5%, #7B80A1  100%);
+				background:-o-linear-gradient(top, #7B80A1  5%, #7B80A1  100%);
+				background:-ms-linear-gradient(top, #7B80A1  5%, #7B80A1  100%);
+				background:linear-gradient(to bottom, #7B80A1  5%, #7B80A1  100%)
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7B80A1 ', endColorstr='#7B80A1 ',GradientType=0);
+				background-color:#7B80A1 ;
+				display:inline-block;
+				cursor:pointer;
+				color:#ffffff;
+				font-family:Arial;
+				font-size:13px;
+				padding:10px 5px;
+				text-decoration:none;
+				text-shadow:none;
+				display: table-cell;
+			}
+	.button:hover {
+				background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7B80A1 ), color-stop(1, #7B80A1 ));
+				background:-moz-linear-gradient(top, #7B80A1  5%, #7B80A1  100%);
+				background:-webkit-linear-gradient(top, #7B80A1  5%, #7B80A1  100%);
+				background:-o-linear-gradient(top, #7B80A1  5%, #7B80A1  100%);
+				background:-ms-linear-gradient(top, #7B80A1  5%, #7B80A1  100%);
+				background:linear-gradient(to bottom, #7B80A1  5%, #7B80A1  100%);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7B80A1 ', endColorstr='#7B80A1 ',GradientType=0);
+				background-color:#7B80A1 ;
+			}
+	.button:active {
+				position:relative;
+				top:1px;
+			}
+
 	.media, #a{
 			clear:left;
 			width:80%;
@@ -74,6 +106,52 @@
 	.media-object{
 			width: 100px;
 		}
+		.media-middle{
+			padding: 0px;
+		}
+	.media-body{
+			padding-left: 8px;
+		}
+		
+	@media all and (max-width: 649px){
+		html{
+			background: url(images/head_image_grey_ls.jpg) no-repeat center center fixed; 
+		}
+	}
+	@media all and (max-width: 849px){
+		.button{
+			height: 50px;
+			font-size: 10px;
+			vertical-align: middle;
+		}
+		#about-us{
+			font-size: 10px;
+		}
+		#blue_barn_logo{
+			width: 30%;
+		}
+	}
+	
+
+	@media all and (min-width: 650px) and (max-width: 1000px){
+		html{
+			background: url(images/head_image_grey_lm.jpg) no-repeat center center fixed; 
+		}
+	}
+	
+	@media all and (min-width: 850px) and (max-width: 1300px){
+		.button{
+			height: 60px;
+		}
+	}
+	
+	@media all and (min-width: 730px) and (max-width: 849px){
+		.button{
+			height: 50px;
+			font-size: 10px;
+			vertical-align: middle;
+		}
+	}
 
 	</style>
 
@@ -82,63 +160,81 @@
 
 <body>
 
+		
 		<!--header-->
+	<div id="head-wrapper">
 		<div id="bbw-head">
-			<img src="images/head_image.jpg" alt="Blue Barn Wagyu" id="head-image" >
-			<img src="images/bluebarnwagyu.jpg" alt="Blue Barn Wagyu" id="blue_barn_logo" >
-
+				<a class="button" id="wagyu-wiki" onclick="window.alert('Did ya Herd that?')">Our Herd</a>
+				<a class="button" >The Champagne of Beef</a>
+				<a class="button" >Cuts for sale</a>
+				<a class="button" >Wagyu for sale</a>
+				<a class="button" >Blue Barn Ranch Family</a>
+				<a class="button" >Restaurants and Retailers</a>
+				<a class="button" >Related links</a>
+				<a class="button" id="contact-us" onclick="window.alert('I could have really messed with you when you pressed that button dad')">Contact us</a>
 		</div>
+	</div>	
+		
+
 		<div id="about-us">
-				<!--sidebar-->
-			<div id="side-bar">
-				<button type="button" id="contact-us" onclick="window.alert('I could have really messed with you when you pressed that button dad')">Contact us</button><br>
-				<button type="button" id="wagyu-wiki" onclick="location.href ='http://en.wikipedia.org/wiki/Wagyu'">Wagyu-Wikipedia</button><br>		
+			<div id="logo">
+					<img src="images/bluebarnwagyu.jpg" alt="Blue Barn Wagyu" id="blue_barn_logo" >
 			</div>
 			<div id="a">
-			<h2>About Us</h2>
-			Blue Barn Wagyu is a small local Waygu Ranch which raises and sells Wagyu cattle. Waygu, also known as the
-			"American Style Kobe Beef" is a high quality beef sold in most high end restaurants. We raise both full blood
-			Waygu and some mixed with high percentages of Wagyu usually in the 80-90 percent range. Please contact us if
-			you are seriously interested in purchasing one of our cattle. 
-			<br><br>
+				<h2>About Us</h2>
+				Blue Barn Wagyu is a small local Waygu Ranch which raises and sells Wagyu cattle. Waygu, also known as the
+				"American Style Kobe Beef" is a high quality beef sold in most high end restaurants. We raise both full blood
+				Waygu and some mixed with high percentages of Wagyu usually in the 80-90 percent range. Please contact us if
+				you are seriously interested in purchasing one of our cattle. 
+				<br><br>
 			</div>
 				<!--images and info-->
-				<div class="media">
+			<div class="media">
+			
+				<div class="media-left media-middle">
+					<a href="images/grass-cows.jpg" data-lightbox="image-1">
+					<img class="media-object" src="images/grass-cows.jpg"   alt="Wagyu">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">Healthy and Grass Fed</h4>
+					Our Wagyu are grass fed and raised on a healthy farm here in Brownsville Oregon located between Albany and Eugene 
+					East of Interstate 5.
+				</div>
+				<br>
 				
-					<div class="media-left media-middle">
-						<a href="images/grass-cows.jpg" data-lightbox="image-1">
-						<img class="media-object" src="images/grass-cows.jpg"   alt="Wagyu">
-						</a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">Healthy and Grass Fed</h4>
-						Our Wagyu are grass fed and raised on a healthy farm here in Brownsville Oregon located between Albany and Eugene 
-						East of Interstate 5.
-					</div>
-					<br>
-					
-					<div class="media-left media-middle">
-						<a href="images/grass-cows-2.jpg" data-lightbox="image-1">
-						<img class="media-object" src="images/grass-cows-2.jpg"  alt="Wagyu">
-						</a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">Lots of Space to Roam</h4>
-						Our small herd of Wagyu have 10 acres to roam with fresh green grass to eat almost year round. 
-					</div>
-					<br>
-					
-					<div class="media-left media-middle">
-						<a href="images/grass-cows.jpg" data-lightbox="image-1">
-						<img class="media-object" src="images/grass-cows.jpg" alt="Wagyu">
-						</a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">Clean Cows Taste Better</h4>
-						Our property is well drained which keeps our cows out of the mud and provides healthy fresh grass for them to eat. 
-					</div>
-					
-				</div><!--end images-->
+				<div class="media-left media-middle">
+					<a href="images/grass-cows-2.jpg" data-lightbox="image-1">
+					<img class="media-object" src="images/grass-cows-2.jpg"  alt="Wagyu">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">Lots of Space to Roam</h4>
+					Our small herd of Wagyu have 10 acres to roam with fresh green grass to eat almost year round. 
+				</div>
+				<br>
+				
+				<div class="media-left media-middle">
+					<a href="images/grass-cows.jpg" data-lightbox="image-1">
+					<img class="media-object" src="images/grass-cows.jpg" alt="Wagyu">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">Clean Cows Taste Better</h4>
+					Our property is well drained which keeps our cows out of the mud and provides healthy fresh grass for them to eat. 
+				</div>
+				<br>
+				<div class="media-left media-middle">
+					<a href="images/steak.jpg" data-lightbox="image-1">
+					<img class="media-object" src="images/steak.jpg"  alt="Wagyu">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">Best Meat Available</h4>
+					Wagyu is known for it's amazing fat
+				</div>
+				<br>
+			</div><!--end images-->
 		</div>
 
 	
