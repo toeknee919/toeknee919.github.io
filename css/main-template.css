@@ -161,7 +161,7 @@ html {
 		display: table-row;
 	}
 	.this-page, .this-page:hover{
-		color: black;
+		color: black !important;
 		background: #fff;
 		box-shadow: inset 0px 0px 0px 0px #000;
 		-moz-box-shadow:inset 0px 0px 0px 0px #000;
