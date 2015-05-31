@@ -195,6 +195,7 @@ html {
 	@media all and (max-width: 575px){
 		.button{
 			font-size: 10px;
+			font-weight: bold;
 		}
 	}
 	@media all and (min-width: 650px) and (max-width: 1000px){
