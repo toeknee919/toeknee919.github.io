@@ -98,6 +98,7 @@ html {
 		list-style: none;
 		position: relative;
 		width: 100%;
+		margin-bottom: 0px;
 	}
 	nav ul:after {
 		clear: both;
@@ -153,12 +154,11 @@ html {
 	#bbw-head{
 		margin: 0px auto;
 		width: 100%;
-		display: flex;
 		text-align: center;
 		background-color: black;
 		opacity: 0.85;
 		font-size: 0px;
-		display: table-row;
+		display: flex;
 	}
 	.this-page, .this-page:hover{
 		color: black !important;
