@@ -15,7 +15,75 @@
 
 	<title>Blue Barn Wagyu</title>
 
-	
+	<style>
+		#contact-form{
+			border-radius: 1px 1px 1px 1px;
+			-moz-border-radius: 1px 1px 1px 1px;
+			-webkit-border-radius: 1px 1px 1px 1px;
+			border: 2px solid #5e5b5e;
+			background-color: #999999;
+			min-width: 275px;
+		}
+		#contact-form td{
+			padding: 10px;
+			color: #000;
+		}
+		td > label{
+			min-width: 80px;
+		}
+		textarea#message{
+			width: 100%;
+		}
+		table{
+			width: 100%;
+		}
+	</style>
+
+	<script type="text/javascript">
+
+	/*******************************************************************
+	this function is used to verify infomation in the form. If filled out
+	correctly, it submits the information via ajax to a email script on the server	
+	*******************************************************************/
+		function SendMail(){
+			var name = $("#name").val();
+			var email = $("#email").val();
+			var phone = $("#phone").val();
+			var message = $("#message").val();
+			var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			
+			if(name == "" || message ==""){
+				alert("Please fill out all required fields in the form");
+			}
+			else if(!re.test(email)){
+				alert("Please enter a valid email");
+			}
+			else{
+				$.ajax({
+					url:'sendmail.rb',
+					type: "GET",
+					data: {'name': name,
+							'email' : email,
+							'phone' : phone,
+							'message' : message },
+					complete: function (data){
+						if(data == false){
+							alert("The email was not sent. Please try again or send us one from your email address");
+						}
+						else{
+							alert(data)
+						}
+					},
+					error: function(){
+	    				alert("We are sorry, the email was not sent. Please try again.");
+	   				}
+				});
+			}
+
+		}
+
+	</script>
+
 </head>
 	<body>
 	<div id="head-wrapper">
@@ -47,49 +115,47 @@
 			<img src="images/bluebarnwagyu.jpg" alt="Blue Barn Wagyu" id="blue_barn_logo" >
 		</div>
 		<div id="a">
-			<h2>Contact Us</h2>
-			Blue Barn Wagyu is a small local Wagyu Ranch which raises and sells Wagyu cattle. Wagyu, also known as the
-			"American Style Kobe Beef" is a high quality beef sold in most high end restaurants. We raise both full blood
-			Wagyu and some mixed with high percentages of Wagyu usually in the 80-90 percent range. Please contact us if
-			you are seriously interested in purchasing one of our cattle. 
+			
+			Please feel free to contact us for more information. We are happy to answer any questions 
+			you may have. Please fill out the form below and make sure to leave us your information. 
 			<br><br>
 		</div>
 		<!--images and info-->
-		<div class="media">
-			
-			<div class="media-left media-middle">
-				<a href="images/fam1.jpg" data-lightbox="image-1">
-					<img class="media-object" src="images/fam1.jpg" alt="Family">
-				</a>
-			</div>
-			<div class="media-body">
-				<h4 class="media-heading">Focused Team</h4>
-				Our highly educated team of managers meet on a regular basis to make sure the farm and cows are healthy and productive.
-			</div>
-			<br>
-
-			<div class="media-left media-middle">
-				<a href="images/grass-cows-2.jpg" data-lightbox="image-1">
-					<img class="media-object" src="images/grass-cows-2.jpg"  alt="Wagyu">
-				</a>
-			</div>
-			<div class="media-body">
-				<h4 class="media-heading">Lots of Space to Roam</h4>
-				Our small herd of Wagyu have 10 acres to roam with fresh green grass to eat almost year round. 
-			</div>
-			<br>
-
-			<div class="media-left media-middle">
-				<a href="images/grass-cows.jpg" data-lightbox="image-1">
-					<img class="media-object" src="images/grass-cows.jpg" alt="Wagyu">
-				</a>
-			</div>
-			<div class="media-body">
-				<h4 class="media-heading">Clean Cows Taste Better</h4>
-				Our property is well drained which keeps our cows out of the mud and provides healthy fresh grass for them to eat. 
-			</div>
-			<br>
-
-		</div><!--end images-->
+		<h2>Contact Us</h2>
+		<div id="contact-form">
+			<form>
+				<table>
+					<tr>
+						<td>
+							<label for="name">Name:</label>
+							<input type="text" name="name" id="name"/> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="email">Email:</label>
+							<input type="text" name="email" id="email"/> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="phone">Phone:</label>
+							<input type="text" name="phone" id="phone"/> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="message">Message:</label><br />
+							<div id="message-wrapper"><textarea rows="6" name="message" id="message"></textarea></div> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input id="submit" onclick="SendMail()" type="button" value="Send">
+						</td>
+					</tr>
+				</table>
+		</form>
+		</div>
 	</div>
 </html>
